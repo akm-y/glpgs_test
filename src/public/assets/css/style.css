@@ -1,0 +1,27 @@
+h1 {
+    margin-bottom: 20px;
+}
+
+form{
+    margin-bottom: 20px;
+}
+
+.contents{
+    width: 400px;
+    margin: 200px auto 0;
+    text-align: center;
+}
+
+.alert{
+    text-align: left;
+}
+
+@media (max-width: 1021px) {
+    .input_box{
+        margin-bottom: 20px;
+    }
+    .btn {
+        width: 100%;
+    }
+}
+
