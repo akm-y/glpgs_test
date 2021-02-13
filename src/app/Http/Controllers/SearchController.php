@@ -34,6 +34,12 @@ class SearchController extends Controller
 
         session()->flash('zip', $input_zip);
 
+        if ( !isset($addresses) ) {
+            return view('index',
+                ['message' => "該当の住所はありません"]
+            );
+        }
+
         return view('index',
             ['addresses' => $addresses]
         );

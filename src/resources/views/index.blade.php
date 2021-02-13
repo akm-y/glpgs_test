@@ -14,14 +14,17 @@
         <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
         <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
         <![endif]-->
+
     </head>
-    <body class="antialiased">
-        <div class="contents">
+    <body class="col-md-12 col-sm-12">
+        <div class="contents center-block">
             <h1>住所検索くん</h1>
             <form action="/search" method="GET" class="form">
                 <div class="form-group row">
                     <div class="col-md-9 col-sm-12">
-                        <input type="text" value='{{ !empty(session("zip")) ? session("zip") :  "" }}' class="input_box form-control" name="zip" placeholder="郵便番号（ハイフンなし、半角数字7桁）" >
+                        <input type="text" value='{{ !empty(session("zip")) ? session("zip") :  "" }}'
+                               class="input_box form-control" id="zip" name="zip" maxlength='7'
+                               placeholder="郵便番号（ハイフンなし、半角数字7桁）" >
                     </div>
                     <div class="col-md-3 col-sm-12">
                         <input type="submit" value="住所検索" class="btn btn-info">
@@ -57,11 +60,16 @@
                             @endforeach
                         </div>
                     @endif
+                    @if (isset($message))
+                        <p class="alert alert-info">{{ $message }}</p>
+                    @endif
                 </div>
             </div>
         </div>
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script><!-- Scripts（Jquery） -->
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script><!-- Scripts（bootstrapのjavascript） -->
+        <script src="assets/js/index.js"></script>
+
     </body>
 </html>
