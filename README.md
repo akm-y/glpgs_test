@@ -12,6 +12,11 @@ FW：Laravel
 
 ## 実行（※メモ）
 
+作業ディレクトリ移動
+```
+cd laradock
+```
+
 Docker起動
 ```
 docker-compose up -d nginx
